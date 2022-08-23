@@ -34,8 +34,28 @@ const songs = [
         artist: "Anirudh Music",
     },
     {
-        name: "vikram-bgm",
+        name: "vikram-title-track",
         title: "Vikram - Title- Track",
-        artist:"",
+        artist:"Anirudh Music",
     }
 ]
+
+const songQueue=(songs)=>{
+    title.textContent = songs.title;
+    artist.textContent = songs.artist;
+    art.src = "./album-art/"+songs.name+".jpg";
+    music.src = "./music/"+songs.name+".mp3";
+
+}
+songIndex = 0;
+const playNext=()=>{
+    songIndex = (songIndex+1)%songs.length;
+    songQueue(songs[songIndex]);
+}
+
+const playPrev=()=>{
+    songIndex = (songIndex-1)%songs.length;
+    songQueue(songs[songIndex]);
+}
+prev.addEventListener('click', playPrev);
+next.addEventListener('click',playNext);
