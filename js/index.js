@@ -64,6 +64,7 @@ songIndex = 0;
 const playNext=()=>{
     songIndex = (songIndex+1)%songs.length;
     songQueue(songs[songIndex]);
+    playMusic();
     setTimeout(() => {
         setTimeout(() => {
             setTimeout(() => {
@@ -81,6 +82,7 @@ const playNext=()=>{
 const playPrev=()=>{
     songIndex = (songIndex-1)%songs.length;
     songQueue(songs[songIndex]);
+    playMusic();
     setTimeout(() => {
         setTimeout(() => {
             setTimeout(() => {
